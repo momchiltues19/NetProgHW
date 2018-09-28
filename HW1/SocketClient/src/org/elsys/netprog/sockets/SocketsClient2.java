@@ -12,7 +12,7 @@ public class SocketsClient2 {
 	public static void main(String[] args) throws IOException {
 		Socket echoSocket = null;
 		try {
-			    echoSocket = new Socket("localhost", 10002);
+			    echoSocket = new Socket("localhost", 10001);
 			    PrintWriter out = new PrintWriter(echoSocket.getOutputStream(), true);
 			    BufferedReader in = new BufferedReader(
 			            new InputStreamReader(echoSocket.getInputStream()));

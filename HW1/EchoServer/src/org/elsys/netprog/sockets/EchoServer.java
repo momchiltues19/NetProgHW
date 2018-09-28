@@ -11,13 +11,11 @@ public class EchoServer {
 
 	public static void main(String[] args) throws IOException {
 		ServerSocket serverSocket = null;
-		ServerSocket serverSocket2 = null;
 		try
 		{
 			serverSocket = new ServerSocket(10001);
-			serverSocket2 = new ServerSocket(10002);
 		    Socket clientSocket = serverSocket.accept();
-		    Socket clientSocket2 = serverSocket2.accept();
+		    Socket clientSocket2 = serverSocket.accept();
 		    System.out.println("client connected from " + clientSocket.getInetAddress());
 		    System.out.println("client connected from " + clientSocket2.getInetAddress());
 		    PrintWriter out =
@@ -44,9 +42,6 @@ public class EchoServer {
 		} finally {
 			if (serverSocket != null && !serverSocket.isClosed()) {
 				serverSocket.close();
-			}
-			if (serverSocket2 != null && !serverSocket2.isClosed()) {
-				serverSocket2.close();
 			}
 			
 			System.out.println("Server closed");
